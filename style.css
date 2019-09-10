@@ -1,0 +1,59 @@
+body{
+    font-family: arial;
+    font-size: 22px;
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: #eee;
+}
+
+.generator__title{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.generator__input{
+    width:100px;
+}
+
+.button{
+    background-color: #98FB98;
+    border:none;
+    border-radius:10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+input,select{
+    font-size: 22px;
+}
+
+.user-list{
+    background-color: #98FB98;
+    filter: grayscale(40%);
+    margin-top:50px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+}
+
+.user{
+    flex-basis: 30%;
+    display: flex;
+}
+
+.user__image{
+    order:-1;
+    padding:20px;
+    border-radius:50%;
+    filter: grayscale(100%);
+}
+
+.user__image:hover{
+    cursor: pointer;
+    filter: grayscale(0%);
+}
+
+.user__name{
+    align-self: center;
+}
+

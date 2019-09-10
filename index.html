@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX - Fetch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <form class="generator">
+        <p class="generator__title">Wyszukiwarka API z listy 5000 randomowych nazwisk</p>
+        <label class="generator__input-name">Wybierz płeć:
+            <select class="generator__select" name="gender">
+                <option value="both" selected>Wszyscy</option>
+                <option value="female">Kobiety</option>
+                <option value="male">Mężczyźni</option>
+            </select>
+        </label>
+        <label class="generator__input-name"> Pierwsza litera nazwiska:
+            <select class="generator__letter" name="letters">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="G">G</option>
+                <option value="H">H</option>
+                <option value="I">I</option>
+                <option value="J">J</option>
+                <option value="K">K</option>
+                <option value="L">L</option>
+                <option value="M">M</option>
+                <option value="N">N</option>
+                <option value="O">O</option>
+                <option value="P">P</option>
+                <option value="Q">Q</option>
+                <option value="R">R</option>
+                <option value="S">S</option>
+                <option value="T">T</option>
+                <option value="U">U</option>
+                <option value="V">V</option>
+                <option value="W">W</option>
+                <option value="X">X</option>
+                <option value="Y">Y</option>
+                <option value="Z">Z</option>
+            </select>
+        </label>
+        <label class="generator__input-name">Liczba osób:
+            <input class="generator__input" name="users-number" type="number" value="15">
+        </label>
+        <input type="submit" class="button" value="Pobierz">
+            <p class="generator__score" name="users-score" type="text"></p>
+    </form>
+    <div class="user-list"></div>
+    <script src="main.js"></script>
+</body>
+</html>
