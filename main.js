@@ -4,16 +4,12 @@ const getUsers = (e) => {
     const usersGender = document.querySelector('[name="gender"]').value;
     const usersNumber = document.querySelector('[name="users-number"]').value;
     const usersLetter = document.querySelector('[name="letters"]').value;
-    console.log(usersLetter);
-    console.log(usersGender, usersNumber,usersLetter);
-    
+  
     const url = `https://randomuser.me/api/?results=${usersNumber}&gender=${usersGender === "both" ? "male,female" :
     usersGender }`;
-    console.log(url);
 
     fetch(url)
         .then(response => {
-        //  console.log(response);
          if(response.status !== 200){
           throw Error("To nie jest odpowiedź 200");
          } else {
@@ -44,7 +40,6 @@ const showUsers = (users) => {
         <img class="user__image" src=${user.picture.medium}>
         `
         resultArea.appendChild(item);
-       
         let itemValue = item.getElementsByClassName("user__name");
         let itemValue2 = itemValue[0].innerText;
         let splitLast = itemValue2.split(/[\s,]+/);
@@ -54,8 +49,8 @@ const showUsers = (users) => {
         if(usersLetter == firstLetter)
         {
             resultCounter++;
-            item.style.border="2px dashed red";
-            item.style.color="red";
+            item.style.color="#FF0000";
+            item.style.fontWeight="bold";
         }
     })
 
@@ -64,12 +59,12 @@ const showUsers = (users) => {
 
 document.querySelector('.generator').addEventListener('submit', getUsers);
 
+
 function showResultScore(allUsers,resultCounter){
     let score = document.querySelector(".generator__score");
-
-    if(resultCounter>0)
-    {
-    score.innerHTML = `<p class="result__number-info">W tym dokumencie znalazłem ${resultCounter} nazwisko/a z listy ${allUsers.length} osób: </p>`;
+    
+    if(resultCounter>0){
+    score.innerHTML = `<p class="result__number-info">W tym dokumencie znalazłem <span>${resultCounter}</span> nazwisko/a z listy ${allUsers.length} osób: </p>`;
     } 
     if(resultCounter == 0){
     score.innerHTML = `<p class="result__number-info">W tym dokumencie nie znalazłem żadnych nazwisk z listy ${allUsers.length} osób: </p>`;
